@@ -18,7 +18,7 @@ Lancer le client (port 3000):
 Un fichier Online.py fera office du logicel de la phase online.
 Pour commencer changer la constante `PATH` dans /server/index.js (c'est la localisasion du fichier Online.py)
 
-Une fois lancer pour tester :
+Une fois le client et le serveur lancé, pour tester :
 - Se rendre dans l'onglet OneHash
 - Rentrer un faux hash (soit hash soit 12345)
 - Le serveur rendra :
