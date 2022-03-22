@@ -1,6 +1,6 @@
 // server/index.js
 
-const PATH ='~/Documents/4INFO/Projet_GPU/UI/UIHash/';
+const PATH ='~/Documents/4INFO/Projet_GPU/hashUI/';
 
 const express = require("express");
 

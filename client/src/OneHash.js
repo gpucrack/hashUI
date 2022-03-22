@@ -32,7 +32,7 @@ function OneHash() {
   return (
     <div className="App">
       <Header/>
-      <header className="App-header">
+      <header className="App-heade">
         <div class="hash">
             <h3>Enter the HashCode</h3>
             <input placeholder="Hash" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 

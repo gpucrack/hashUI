@@ -13,7 +13,7 @@ function Result() {
     return (
         <div className="App">
             <Header/>
-        <header className="App-header">
+        <header className="App-heade">
             <p>The result is : </p>
             {pwd}
         </header>

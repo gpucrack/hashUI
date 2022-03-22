@@ -16,14 +16,28 @@ function App() {
     <div className="App">
       <Header/>
       <header className="App-header">
-        <div className="welcome">
-          <h1>Welcome on GPUCrack !</h1>
-          <NavLink to="/onehash"><button type="button" class="btn btn-primary">OneHash</button></NavLink>
-          <NavLink to="/result"><button type="button" class="btn btn-primary">SeveralHash</button></NavLink>
+      <div class="animated-title">
+       <div class="text-top">
+        <div>
+          <span>Welcome on</span>
         </div>
-      </header>
+      </div>
+      <div class="text-bottom">
+        <div>GPUCrack</div>
+        
+       </div>
+
+    <div className="welcome">
+      <NavLink to="/onehash"><button class="button-1" role="button" >One hash</button></NavLink>
+      <NavLink to="/result"><button class="button-2" role="button">Several hash</button></NavLink>
+    </div>
+  </div>
+</header>
+
     </div>
   );
 }
 
 export default App;
+
+
