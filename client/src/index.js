@@ -6,6 +6,7 @@ import Statistiques from './Statistiques';
 import OneHash from './OneHash';
 import Result from './Result';
 import Loading from './Loading'
+import Error from './Error';
 import SeveralHash from './SeveralHash';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Route path="/result" element={<Result/>}/>
       <Route path="/severalhash" element={<SeveralHash/>}/>
       <Route path="/loading" element={<Loading/>}/>
+      <Route path="/error" element={<Error/>}/>
     </Routes>
   </Router>,
   document.getElementById('root')

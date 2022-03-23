@@ -23,10 +23,13 @@ function OneHash() {
           .catch(err => {
             console.error(err);
           });
+    }else{
+      navigate('/error')
     }
   }
 
   function isHash() {
+    localStorage.setItem("error_type","wrong hash");
     return true;
   }
 
