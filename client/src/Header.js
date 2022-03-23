@@ -21,7 +21,7 @@ function Header() {
                 <a class="nav-link" href="/onehash">One hash</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Several hash</a>
+                <a class="nav-link" href="/severalhash">Several hash</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://github.com/gpucrack"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="25cm" ></img></a>

@@ -10,6 +10,7 @@ function OneHash() {
   let navigate = useNavigate();
 
   function postHash() {
+    navigate('/loading')
     if (isHash()) {
         axios
           .post('/postHash', {hash: inputHash})
@@ -34,13 +35,13 @@ function OneHash() {
       <Header/>
       <header className="App-heade">
         <div class="hash">
-            <h3>Enter the hash of your password </h3>
+            <h3>Enter a hashCode </h3>
             <p> </p>
             <input placeholder="Hash" class="input" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 
             <p> </p>
             <p> </p>
           <button type="button" class="button" onClick={postHash}>Send</button>
-          
+
         </div>
       </header>
     </div>
