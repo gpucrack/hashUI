@@ -34,9 +34,13 @@ function OneHash() {
       <Header/>
       <header className="App-heade">
         <div class="hash">
-            <h3>Enter the HashCode</h3>
-            <input placeholder="Hash" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 
-          <button type="button" class="btn btn-primary bouton" onClick={postHash}>Send</button>
+            <h3>Enter the hash of your password </h3>
+            <p> </p>
+            <input placeholder="Hash" class="input" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 
+            <p> </p>
+            <p> </p>
+          <button type="button" class="button" onClick={postHash}>Send</button>
+          
         </div>
       </header>
     </div>

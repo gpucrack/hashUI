@@ -24,7 +24,7 @@ function Header() {
                 <a class="nav-link" href="#">Several hash</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://github.com/gpucrack"><img src="https://cdn.icon-icons.com/icons2/2368/PNG/512/github_logo_icon_143772.png" width="20cm" ></img></a>
+                <a class="nav-link" href="https://github.com/gpucrack"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="25cm" ></img></a>
               </li>
             </ul>
           </div>
