@@ -14,6 +14,7 @@ function Result() {
         <div className="App">
             <Header/>
         <header className="App-heade">
+            <h2>PASSWORD FOUND</h2>
             <p>The result is : </p>
             {pwd}
         </header>

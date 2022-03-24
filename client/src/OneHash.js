@@ -17,8 +17,12 @@ function OneHash() {
           .then((response) => {
             console.log(response.data.message);
             setDataReturn(response.data.message);
-            localStorage.setItem("pwd",response.data.message);
-            navigate('/result') 
+            if (dataReturn === 'not_found') {
+              navigate('/statistiques');
+            }else{
+              localStorage.setItem("pwd",response.data.message);
+              navigate('/result')
+            } 
           })
           .catch(err => {
             console.error(err);

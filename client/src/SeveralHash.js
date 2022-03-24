@@ -3,6 +3,13 @@ import './SeveralHash.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Header from "./Header";
+import $ from 'jquery';
+
+$(document).ready(function () {
+  $("form input").change(function () {
+    $("form p").text(this.files.length + " file(s) selected");
+  });
+});
 
 function OneHash() {
   const [dataReturn, setDataReturn] = React.useState(null);
@@ -10,22 +17,29 @@ function OneHash() {
   let navigate = useNavigate();
 
   function postHash() {
+    navigate('/loading')
     if (isHash()) {
         axios
           .post('/postHash', {hash: inputHash})
           .then((response) => {
             console.log(response.data.message);
             setDataReturn(response.data.message);
-            localStorage.setItem("pwd",response.data.message);
-            navigate('/result') 
+            if (dataReturn === 'not_found') {
+              navigate('/statistiques');
+            }else{
+              localStorage.setItem("pwd",response.data.message);
+              navigate('/result')
+            } 
           })
           .catch(err => {
             console.error(err);
           });
     }
   }
+  
 
   function isHash() {
+    localStorage.setItem("error_type","wrong hash");
     return true;
   }
 
@@ -34,13 +48,14 @@ function OneHash() {
       <Header/>
       <header className="App-heade">
         <div class="hash">
+          <div class="top">            
             <h3>Enter a file of hashCode </h3>
-            <p> </p>
-            <input placeholder="Hash" class="input" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 
-            <p> </p>
-            <p> </p>
-          <button type="button" class="button" onClick={postHash}>Send</button>
-
+          </div>
+            <form onClick={postHash}>
+              <input type="file" multiple/>
+                <p>Drag your file here or click in this area.</p>
+                <button type="submit">Upload</button>
+              </form>
         </div>
       </header>
     </div>
