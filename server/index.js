@@ -1,7 +1,5 @@
 // server/index.js
 
-const PATH ='~/Documents/4INFO/Projet_GPU/hashUI/';
-
 const express = require("express");
 
 const PORT = process.env.PORT || 3001;
@@ -27,11 +25,18 @@ app.post('/postHash', (req, res) => {
     message: 'stats'
   }) :
 
-  msg=onlineProg(req.body.hash) //Appelle du programme online
+  onlineProg(req.body.hash) //Appelle du programme online
+  nb_false_alarm = false_alarm()
+  nb_time = time()
+  msg = pwd()
   console.log('Password is : '+msg) //Recupération pwd
+  console.log('Time is : '+nb_time)
+  console.log('Nb false alarm is : '+nb_false_alarm)
 
   res.status(201).json({ // on envoie le pwd
-    message: msg
+    password: msg, 
+    time : nb_time,
+    number : nb_false_alarm
   });
 });
 
@@ -43,11 +48,43 @@ app.listen(PORT, () => {
 function onlineProg (str){
   const execSync = require('child_process').execSync;
   try{
-    cmd ='python '+PATH+'Online.py ' + str; // création de la commande
+    cmd ='./online_short full_start_0.bin full_end_0.bin -h ' + str+" > file.txt"; // création de la commande
     const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
-    //console.log('Output was:\n', output);
     return output;
   }catch (error) {
     console.error(error);
   }
 }
+
+  function false_alarm (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python fa.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  function time (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python time.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  function pwd (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python pwd.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }

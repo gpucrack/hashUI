@@ -15,14 +15,17 @@ function OneHash() {
         axios
           .post('/postHash', {hash: inputHash})
           .then((response) => {
-            console.log(response.data.message);
-            setDataReturn(response.data.message);
-            if (dataReturn === 'not_found') {
-              navigate('/statistiques');
-            }else{
-              localStorage.setItem("pwd",response.data.message);
-              navigate('/result')
-            } 
+            console.log(response.data.password);
+            setDataReturn(response.data.password);
+            localStorage.setItem("pwd",response.data.password);
+            console.log(response.data.time);
+            setDataReturn(response.data.time);
+            localStorage.setItem("time",response.data.time);
+            console.log(response.data.number);
+            setDataReturn(response.data.number);
+            localStorage.setItem("alert",response.data.number);
+            navigate('/result')
+          
           })
           .catch(err => {
             console.error(err);

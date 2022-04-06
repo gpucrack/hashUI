@@ -51,10 +51,10 @@ function OneHash() {
           <div class="top">            
             <h3>Enter a file of hashCode </h3>
           </div>
-            <form onClick={postHash}>
+            <form>
               <input type="file" multiple/>
                 <p>Drag your file here or click in this area.</p>
-                <button type="submit">Upload</button>
+                <button type="submit" onClick={postHash}>Upload</button>
               </form>
         </div>
       </header>
