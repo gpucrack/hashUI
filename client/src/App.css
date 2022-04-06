@@ -50,15 +50,15 @@ code {
 }
 
 .welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 2em;
 }
 
 .server {
   margin-top: 1em;
 }
+
 
 /* Texte */
 
@@ -144,9 +144,11 @@ code {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  position: absolute;
-  left: 150px;
-  top: 60px;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position:relative;
 }
 
 .button-1:hover {
@@ -160,6 +162,7 @@ code {
     padding: 1rem 2rem;
   }
 }
+
 
 .button-2 {
   background-color: #fff;
@@ -182,9 +185,11 @@ code {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  position: absolute;
-  left: 400px;
-  top: 60px;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position:relative;
 }
 
 .button-2:hover {
