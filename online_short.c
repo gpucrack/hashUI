@@ -594,8 +594,6 @@ int online_from_files_coverage(char *start_path, char *end_path, int pwd_length,
 int main(int argc, char *argv[]) {
     float time;
     clock_t t1, t2;
-    FILE* file =NULL;
-    file = fopen("res.txt","w");
     t1 = clock();
     if (argc < 5) {
         printf("Error: too many arguments given.\nUsage: 'online startpath endpath -p password', where:"
@@ -680,8 +678,8 @@ int main(int argc, char *argv[]) {
 
         // if `found` is not empty, then we successfully cracked the password
         if (!strcmp(found, "")) {
-            fputs("PASSWORD\n",file);
-            fputs("-1\n",file);
+            printf("PASSWORD\n");
+            printf("-1\n");
         } else {
             printf("PASSWORD\n");
             printf("%.*s\n", pwd_length, found);
@@ -690,7 +688,6 @@ int main(int argc, char *argv[]) {
         time = (float)(t2-t1)/CLOCKS_PER_SEC;
         printf("TIME\n");
         printf("%f\n",time);
-        fclose(file);
         exit(0);
     } else if (strcmp(argv[3], "-c") == 0) {
         int nb_cover = atoi(argv[4]);

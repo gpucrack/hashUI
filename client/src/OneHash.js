@@ -9,30 +9,64 @@ function OneHash() {
   const [inputHash, setInputHash] = React.useState('');
   let navigate = useNavigate();
 
-  function postHash() {
-    navigate('/loading')
-    if (isHash()) {
-        axios
-          .post('/postHash', {hash: inputHash})
-          .then((response) => {
-            console.log(response.data.password);
-            setDataReturn(response.data.password);
-            localStorage.setItem("pwd",response.data.password);
-            console.log(response.data.time);
-            setDataReturn(response.data.time);
-            localStorage.setItem("time",response.data.time);
-            console.log(response.data.number);
-            setDataReturn(response.data.number);
-            localStorage.setItem("alert",response.data.number);
-            navigate('/result')
-          
-          })
-          .catch(err => {
-            console.error(err);
-          });
-    }else{
-      navigate('/error')
+  function postHash(e) {
+    if(e.keyCode ==13){
+      navigate('/loading')
+      if (isHash()) {
+          axios
+            .post('/postHash', {hash: inputHash})
+            .then((response) => {
+              console.log(response.data.password);
+              setDataReturn(response.data.password);
+              localStorage.setItem("pwd",response.data.password);
+              console.log(response.data.time);
+              setDataReturn(response.data.time);
+              localStorage.setItem("time",response.data.time);
+              console.log(response.data.number);
+              setDataReturn(response.data.number);
+              localStorage.setItem("alert",response.data.number);
+              if(response.data.password==="-1\n"){
+                navigate('/error')
+              }else{
+                navigate('/result')
+              }          
+            })
+            .catch(err => {
+              console.error(err);
+            });
+      }else{
+        navigate('/error')
+      }
     }
+  }
+
+  function postHash2() {
+      navigate('/loading')
+      if (isHash()) {
+          axios
+            .post('/postHash', {hash: inputHash})
+            .then((response) => {
+              console.log(response.data.password);
+              setDataReturn(response.data.password);
+              localStorage.setItem("pwd",response.data.password);
+              console.log(response.data.time);
+              setDataReturn(response.data.time);
+              localStorage.setItem("time",response.data.time);
+              console.log(response.data.number);
+              setDataReturn(response.data.number);
+              localStorage.setItem("alert",response.data.number);
+              if(response.data.password==="-1\n"){
+                navigate('/error')
+              }else{
+                navigate('/result')
+              }          
+            })
+            .catch(err => {
+              console.error(err);
+            });
+      }else{
+        navigate('/error')
+      }
   }
 
   function isHash() {
@@ -47,11 +81,10 @@ function OneHash() {
         <div class="hash">
             <h3>Enter a hashCode </h3>
             <p> </p>
-            <input placeholder="Hash" class="input" value= {inputHash} onInput={e => setInputHash(e.target.value)}></input> 
+            <input placeholder="Hash" class="input" value= {inputHash} onInput={e => setInputHash(e.target.value)} onKeyUp={postHash}></input>
             <p> </p>
             <p> </p>
-          <button type="button" class="button" onClick={postHash}>Send</button>
-
+            <input type="button" class="button" onClick={postHash2} value="Send"></input>
         </div>
       </header>
     </div>
