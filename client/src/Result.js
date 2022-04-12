@@ -73,23 +73,7 @@ function Result() {
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>In which table was the password found?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                                Table :
-                            </h3>
-                            <p>tab</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
