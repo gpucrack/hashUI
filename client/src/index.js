@@ -5,6 +5,7 @@ import App from './App';
 import Statistiques from './Statistiques';
 import OneHash from './OneHash';
 import Result from './Result';
+import Results from './Results';
 import Loading from './Loading'
 import Error from './Error';
 import SeveralHash from './SeveralHash';
@@ -19,9 +20,11 @@ ReactDOM.render(
       <Route path="/statistiques" element={<Statistiques />} />
       <Route path="/onehash" element={<OneHash/>}/>
       <Route path="/result" element={<Result/>}/>
+      <Route path="/results" element={<Results/>}/>
       <Route path="/severalhash" element={<SeveralHash/>}/>
       <Route path="/loading" element={<Loading/>}/>
       <Route path="/error" element={<Error/>}/>
+
     </Routes>
   </Router>,
   document.getElementById('root')

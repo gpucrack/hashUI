@@ -12,7 +12,7 @@ if __name__ == '__main__':
     count=0
     
     for line in lines:
-        if (line.strip()=="FALSE_ALERT"):
+        if (line.strip()=="FALSE ALERT"):
             count +=1
     print(count)
             

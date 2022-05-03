@@ -26,7 +26,7 @@ function App() {
         </div>
         <div className="welcome">
           <NavLink to="/onehash"><button class="button-1" role="button" >One hash</button></NavLink>
-          <NavLink to="/result"><button class="button-2" role="button">Several hash</button></NavLink>
+          <NavLink to="/severalhash"><button class="button-2" role="button">Several hash</button></NavLink>
         </div>
         
       </header>
