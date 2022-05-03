@@ -70,7 +70,7 @@ function OneHash() {
   }
 
   function isHash() {
-    localStorage.setItem("error_type","wrong hash");
+    localStorage.setItem("error_type","Wrong hash");
     return true;
   }
 

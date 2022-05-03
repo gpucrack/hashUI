@@ -25,7 +25,9 @@ function Result() {
             <h1 class="PwdFound">
                 <span class="word">PASSWORD FOUND</span>
             </h1>
-            <p>The result is : </p>
+            <br/>
+            <p>The password is :  </p>
+            
             <div className="Pwd">
                 {pwd}
             </div>
@@ -52,7 +54,7 @@ function Result() {
                             <h3>
                                 Time :
                             </h3>
-                            {time}
+                            <p>{time} sec</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +62,7 @@ function Result() {
                     <div class="face face1">
                         <div class="content">
                             <div class="icon">
-                                <i>How many false alarms have there been?</i>
+                                <i>How many false alarms are there?</i>
                             </div>
                         </div>
                     </div>
@@ -70,23 +72,6 @@ function Result() {
                             False alarms :
                             </h3>
                             {alert}
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>In which table was the password found?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                                Table :
-                            </h3>
-                            <p>tab</p>
                         </div>
                     </div>
                 </div>
