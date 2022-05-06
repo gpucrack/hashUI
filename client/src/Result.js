@@ -13,11 +13,15 @@ function getTime(){ //récupération du mot de passe
 function getAlert(){ //récupération du mot de passe
     return localStorage.getItem("alert");
 }
+function getColumn(){ //récupération du mot de passe
+    return localStorage.getItem("column");
+}
 
 function Result() {
     var pwd = getPWD();
     var time = getTime();
     var alert = getAlert();
+    var column = getColumn();
     return (
         <div className="App">
             <Header/>
@@ -25,7 +29,9 @@ function Result() {
             <h1 class="PwdFound">
                 <span class="word">PASSWORD FOUND</span>
             </h1>
-            <p>The result is : </p>
+            <br/>
+            <p>The password is :  </p>
+            
             <div className="Pwd">
                 {pwd}
             </div>
@@ -52,7 +58,7 @@ function Result() {
                             <h3>
                                 Time :
                             </h3>
-                            {time}
+                            <p>{time} sec</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +66,7 @@ function Result() {
                     <div class="face face1">
                         <div class="content">
                             <div class="icon">
-                                <i>How many false alarms have there been?</i>
+                                <i>How many false alarms are there?</i>
                             </div>
                         </div>
                     </div>
@@ -77,16 +83,16 @@ function Result() {
                     <div class="face face1">
                         <div class="content">
                             <div class="icon">
-                                <i>In which table was the password found?</i>
+                                <i>In which column the password was found ?</i>
                             </div>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
                             <h3>
-                                Table :
+                            Column number :
                             </h3>
-                            <p>tab</p>
+                            {column}
                         </div>
                     </div>
                 </div>

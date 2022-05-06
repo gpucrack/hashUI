@@ -1,0 +1,21 @@
+ /* The navbar container */
+ .navbar-toggler {
+    overflow: hidden;
+
+  }
+  
+  /* Navbar links */
+  .navbar-collapse a {
+    float: right;
+
+  }
+
+
+  
+  /* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .navbar-collapse a {
+      float: none;
+      width: 100%;
+    }
+  } 

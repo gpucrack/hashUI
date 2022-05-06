@@ -1,5 +1,5 @@
 import React from "react";
-import './Result.css';
+import './Results.css';
 import './OneHash'
 
 import Header from "./Header";
@@ -52,7 +52,7 @@ function Result() {
                             <h3>
                                 Time :
                             </h3>
-                            {time}
+                            <p>{time} sec</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function Result() {
                     <div class="face face1">
                         <div class="content">
                             <div class="icon">
-                                <i>How many false alarms have there been?</i>
+                                <i>How many false alarms are there?</i>
                             </div>
                         </div>
                     </div>
@@ -73,23 +73,7 @@ function Result() {
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>In which table was the password found?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                                Table :
-                            </h3>
-                            <p>tab</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </section>
 

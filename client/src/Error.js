@@ -15,8 +15,8 @@ function Error(){
     <div className="App">
       <Header/>
       <header className="App-heade">
-        <div class="hash">
-            <h3>ERROR : </h3>
+        <div class="hash2">
+            <h3>ERROR</h3>
             {error}
             <p> </p>
             <p> </p>

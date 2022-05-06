@@ -25,6 +25,8 @@ function OneHash() {
               console.log(response.data.number);
               setDataReturn(response.data.number);
               localStorage.setItem("alert",response.data.number);
+              setDataReturn(response.data.column);
+              localStorage.setItem("column",response.data.column);
               if(response.data.password==="-1\n"){
                 navigate('/error')
               }else{
@@ -55,6 +57,8 @@ function OneHash() {
               console.log(response.data.number);
               setDataReturn(response.data.number);
               localStorage.setItem("alert",response.data.number);
+              setDataReturn(response.data.column);
+              localStorage.setItem("column",response.data.column);
               if(response.data.password==="-1\n"){
                 navigate('/error')
               }else{
@@ -70,7 +74,7 @@ function OneHash() {
   }
 
   function isHash() {
-    localStorage.setItem("error_type","wrong hash");
+    localStorage.setItem("error_type","Wrong hash");
     return true;
   }
 

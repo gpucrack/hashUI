@@ -50,14 +50,17 @@ app.post('/postHash', (req, res) => {
   nb_false_alarm = false_alarm()
   nb_time = time()
   msg = pwd()
+  col = column()
   console.log('Password is : '+msg) //Recupération pwd
   console.log('Time is : '+nb_time)
   console.log('Nb false alarm is : '+nb_false_alarm)
+  console.log('Number of the column :'+col)
 
   res.status(201).json({ // on envoie le pwd
     password: msg, 
     time : nb_time,
-    number : nb_false_alarm
+    number : nb_false_alarm,
+    column : col
   });
 });
 
@@ -125,6 +128,16 @@ function onlineSevProg (str){
     const execSync = require('child_process').execSync;
     try{
       cmd ='python pourcentage.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }
+  function column (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python column.py'; // création de la commande
       const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
       return output;
     }catch (error) {
