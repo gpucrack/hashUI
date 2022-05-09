@@ -25,6 +25,10 @@ function OneHash() {
               console.log(response.data.number);
               setDataReturn(response.data.number);
               localStorage.setItem("alert",response.data.number);
+              setDataReturn(response.data.end_point);
+              localStorage.setItem("end_point",response.data.end_point);
+              setDataReturn(response.data.t);
+              localStorage.setItem("t",response.data.t);
               if(response.data.password==="-1\n"){
                 navigate('/error')
               }else{
@@ -55,6 +59,10 @@ function OneHash() {
               console.log(response.data.number);
               setDataReturn(response.data.number);
               localStorage.setItem("alert",response.data.number);
+              setDataReturn(response.data.end_point);
+              localStorage.setItem("end_point",response.data.end_point);
+              setDataReturn(response.data.t);
+              localStorage.setItem("t",response.data.t);
               if(response.data.password==="-1\n"){
                 navigate('/error')
               }else{

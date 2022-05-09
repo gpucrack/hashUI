@@ -16,12 +16,20 @@ function getAlert(){ //récupération du mot de passe
 function getColumn(){ //récupération du mot de passe
     return localStorage.getItem("column");
 }
+function getEndPoint(){ //récupération du mot de passe
+    return localStorage.getItem("end_point");
+}
+function getT(){ //récupération du mot de passe
+    return localStorage.getItem("t");
+}
 
 function Result() {
     var pwd = getPWD();
     var time = getTime();
     var alert = getAlert();
     var column = getColumn();
+    var end_point = getEndPoint();
+    var t = getT();
     return (
         <div className="App">
             <Header/>
@@ -98,7 +106,9 @@ function Result() {
                 </div>
             </div>
         </section>
-
+        <h1>Statistics on the Rainbow tables that the interface uses : </h1>
+        Total number of end points (mtTotal): {end_point} / 
+        Chain length (t): {t}
         </div>
     );
 }

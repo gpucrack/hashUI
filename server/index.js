@@ -28,14 +28,20 @@ app.post('/postSevHash', (req, res) => {
   nb_false_alarm = false_alarm()
   nb_time = time()
   msg = pourcentage()
+  end_point = endpoint()
+  t = t_point()
   console.log('Pourcentag is : '+msg) //Recupération pwd
   console.log('Time is : '+nb_time)
   console.log('Nb false alarm is : '+nb_false_alarm)
+  console.log('Nb end point : ' + end_point)
+  console.log('Chain length (t): '+ t)
 
   res.status(201).json({ // on envoie le pwd
     password: msg, 
     time : nb_time,
-    number : nb_false_alarm
+    number : nb_false_alarm,
+    end_point : end_point,
+    t : t
   });
 });
 
@@ -51,16 +57,22 @@ app.post('/postHash', (req, res) => {
   nb_time = time()
   msg = pwd()
   col = column()
+  end_point = endpoint()
+  t = t_point()
   console.log('Password is : '+msg) //Recupération pwd
   console.log('Time is : '+nb_time)
   console.log('Nb false alarm is : '+nb_false_alarm)
   console.log('Number of the column :'+col)
+  console.log('Nb end point : ' + end_point)
+  console.log('"Chain length (t): '+ t)
 
   res.status(201).json({ // on envoie le pwd
     password: msg, 
     time : nb_time,
     number : nb_false_alarm,
-    column : col
+    column : col,
+    end_point : end_point,
+    t : t
   });
 });
 
@@ -138,6 +150,28 @@ function onlineSevProg (str){
     const execSync = require('child_process').execSync;
     try{
       cmd ='python column.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  function endpoint (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python endPoint.py'; // création de la commande
+      const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
+      return output;
+    }catch (error) {
+      console.error(error);
+    }
+  }
+
+  function t_point (){
+    const execSync = require('child_process').execSync;
+    try{
+      cmd ='python tPoint.py'; // création de la commande
       const output = execSync(cmd, { encoding: 'utf-8' });  // the default is 'buffer'
       return output;
     }catch (error) {
