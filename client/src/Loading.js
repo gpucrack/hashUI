@@ -1,16 +1,10 @@
 import React from "react";
 import './Loading.css';
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+
 import Header from "./Header";
 
 function OneHash() {
-  const [dataReturn, setDataReturn] = React.useState(null);
-  const [inputHash, setInputHash] = React.useState('');
-  let navigate = useNavigate();
-
-
-
+  
   return (
     <div className="App">
       <Header/>

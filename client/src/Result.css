@@ -17,6 +17,8 @@
  
 }
 
+
+
 .Pwd{
     color:#6b2a14 	;
     font-size:xx-large;
@@ -25,12 +27,31 @@
     animation-iteration-count: 1; 
     border-top: 2px solid #6b2a14;
     border-bottom:2px solid #6b2a14;
-
+    margin-bottom: 0rem;
     margin-left: 18rem;
     margin-right: 18rem;
     text-align: center;
-
+    
 }
+
+
+.stats{
+    border: solid;
+    border-width: 0.1em;
+    padding: 1rem;
+    float: right;
+    position: absolute;
+    right:80px;
+    top:180px;
+    border-radius: 0.5em;
+    border-color: #6b2a14;
+}
+
+.txt .stats p{
+    font-size: 0.7em;
+    text-align: left;
+}
+ 
 
 @keyframes fadeInAnimation { 
     0% { 
@@ -41,31 +62,23 @@
     } 
 } 
 
-.App-heade{
+.txt{
     font-family: Roboto, Arial, sans-serif;
     font-size :1.5rem;
+    margin-top: 5rem;
 }
 .container2 {
     width: 1000px;
     position: relative;
-    margin-top: 4em;
+    margin-top: 5em;
     justify-content: space-between;
     bottom: 0em;
     
 }
 
-.container2 .card {
-    position: relative;
-    display: inline-block;
-    margin: 1em;
-    background: #c8ad7f;
-    border: 0;
-}
 
 .container2 .card .icon{
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     transition: 0.7s;
@@ -78,6 +91,10 @@
 }
 
 .container2 .card:nth-child(2) .icon {
+    background: #404040;
+}
+
+.container2 .card:nth-child(3) .icon {
     background: #404040;
 }
 
@@ -98,12 +115,11 @@ i {
     width: 250px;
     height: 200px;
     transition: 0.5s;
-    
 }
 
 .container2 .card .face.face1 {
     position: relative;
-    background: #333;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,8 +168,3 @@ i {
     padding: 0;
     text-align: center;
 }
-
-
- 
- 
- 

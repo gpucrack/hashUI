@@ -1,7 +1,5 @@
 import React from "react";
 import './Error.css';
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
 

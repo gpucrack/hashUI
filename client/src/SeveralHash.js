@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Header from "./Header";
 
-function OneHash() {
+function SeveralHash() {
   const [dataReturn, setDataReturn] = React.useState(null);
   const [inputHash, setInputHash] = React.useState('');
   let navigate = useNavigate();
@@ -30,7 +30,7 @@ function OneHash() {
               setDataReturn(response.data.t);
               localStorage.setItem("t",response.data.t);
               if(response.data.password==="-1\n"){
-                navigate('/error')
+                navigate('/errors')
               }else{
                 navigate('/results')
               }          
@@ -39,7 +39,7 @@ function OneHash() {
               console.error(err);
             });
       }else{
-        navigate('/error')
+        navigate('/errors')
       }
     }
   }
@@ -64,7 +64,7 @@ function OneHash() {
               setDataReturn(response.data.t);
               localStorage.setItem("t",response.data.t);
               if(response.data.password==="-1\n"){
-                navigate('/error')
+                navigate('/errors')
               }else{
                 navigate('/results')
               }          
@@ -73,12 +73,12 @@ function OneHash() {
               console.error(err);
             });
       }else{
-        navigate('/error')
+        navigate('/errors')
       }
   }
 
   function isHash() {
-    localStorage.setItem("error_type","wrong hash");
+    localStorage.setItem("error_type","Wrong file");
     return true;
   }
 
@@ -98,4 +98,4 @@ function OneHash() {
     </div>
   );
 }
- export default OneHash;
+ export default SeveralHash;

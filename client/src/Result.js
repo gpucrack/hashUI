@@ -31,84 +31,90 @@ function Result() {
     var end_point = getEndPoint();
     var t = getT();
     return (
+        
         <div className="App">
             <Header/>
-        <header className="App-heade">
-            <h1 class="PwdFound">
-                <span class="word">PASSWORD FOUND</span>
-            </h1>
-            <br/>
-            <p>The password is :  </p>
+            <header className="App-heade">
+                <div class="txt">
+                    <h1 class="PwdFound">
+                        <span class="word">PASSWORD FOUND</span>
+                    </h1>
+                    <br/>
+                    <p>The password is :  </p>
+                    
+                    <div className="Pwd">
+                        {pwd}
+                        </div>
+                    <div class="stats">
+                        <h4>The rainbow tables used: </h4>
+                        <p>
+                            - Total number of endpoints (mtTotal): {end_point}
+                        </p>
+                        <p>
+                            - Chain length (t): {t}
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </header>
+            <section>
+                <div class="container2">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i>How long did it take to find the password?</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h4>
+                                    Time :
+                                </h4>
+                                <p>{time} sec</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i>How many false alarms were there?</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h4>
+                                False alarms :
+                                </h4>
+                                {alert}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <div class="icon">
+                                    <i>In which column was the password found?</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <h4>
+                                Column number :
+                                </h4>
+                                {column}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
-            <div className="Pwd">
-                {pwd}
-            </div>
-
-
-
-
-        </header>
-
-
-
-        <section>
-            <div class="container2">
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>How long did it take to find the password?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                                Time :
-                            </h3>
-                            <p>{time} sec</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>How many false alarms are there?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                            False alarms :
-                            </h3>
-                            {alert}
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon">
-                                <i>In which column the password was found ?</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="content">
-                            <h3>
-                            Column number :
-                            </h3>
-                            {column}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <h1>Statistics on the Rainbow tables that the interface uses : </h1>
-        Total number of end points (mtTotal): {end_point} / 
-        Chain length (t): {t}
+        
         </div>
     );
 }

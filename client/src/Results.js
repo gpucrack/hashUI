@@ -20,7 +20,7 @@ function getT(){ //récupération du mot de passe
     return localStorage.getItem("t");
 }
 
-function Result() {
+function Results() {
     var pwd = getPWD();
     var time = getTime();
     var alert = getAlert();
@@ -29,19 +29,30 @@ function Result() {
     return (
         <div className="App">
             <Header/>
-        <header className="App-heade">
-            <h1 class="PwdFound">
-                <span class="word">COVERAGE PASSWORD</span>
-            </h1>
-            <p>Percentage of passwords found : </p>
-            <div className="Pwd">
-                {pwd} %
-            </div>
-
-
-
-
-        </header>
+            <header className="App-heade">
+                <div class="txt">
+                    <h1 class="PwdFound">
+                        <span class="word">PASSWORD FOUND</span>
+                    </h1>
+                    <br/>
+                    <p>The password is :  </p>
+                    
+                    <div className="Pwd">
+                        {pwd}
+                        </div>
+                    <div class="stats">
+                        <h4>The rainbow tables used: </h4>
+                        <p>
+                            - Total number of endpoints (mtTotal): {end_point}
+                        </p>
+                        <p>
+                            - Chain length (t): {t}
+                        </p>
+                    </div>
+                    
+                </div>
+                
+            </header>
 
 
 
@@ -57,9 +68,9 @@ function Result() {
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <h3>
+                            <h4>
                                 Time :
-                            </h3>
+                            </h4>
                             <p>{time} sec</p>
                         </div>
                     </div>
@@ -68,15 +79,15 @@ function Result() {
                     <div class="face face1">
                         <div class="content">
                             <div class="icon">
-                                <i>How many false alarms are there?</i>
+                                <i>How many false alarms were there?</i>
                             </div>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <h3>
+                            <h4>
                             False alarms :
-                            </h3>
+                            </h4>
                             {alert}
                         </div>
                     </div>
@@ -84,11 +95,8 @@ function Result() {
                 
             </div>
         </section>
-        <h1>Statistics on the Rainbow tables that the interface uses : </h1>
-        Total number of end points (mtTotal): {end_point} / 
-        Chain length (t): {t}
     </div>
     );
 }
 
-export default Result;
+export default Results;
